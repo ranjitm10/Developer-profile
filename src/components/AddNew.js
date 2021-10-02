@@ -22,7 +22,7 @@ function AddNew(props) {
 	const addnewUser = () => {
 		const id = data;
 		if (id) {
-			const request = new Request("/api/developers", {
+			const request = new Request("https://backend.ranjitm10.repl.co/developers", {
 				method: "POST",
 				headers: new Headers({
 					"Content-Type": "application/json",

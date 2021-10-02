@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect,useState} from 'react';
 import "../index.css";
 import githubLogo from "../static/githublogo.png"
 import codechef from "../static/codechef.png"
@@ -16,21 +16,20 @@ import Repos from './Repos';
 function ProfileHeader(props) {
     
       const [data, setData] = useState( { developerId : props.developerId.match.params.developerId});
-   
-    
-      function componentDidMount()
-      {
-          
-          fetchUserDetails();
-      }
-
       function fetchUserDetails()
       {
-        fetch(`/api/developers/${data.developerId}`).then(response => response.json()).then(data => 
+        fetch(`https://backend.ranjitm10.repl.co/developers/${data.developerId}`).then(response => response.json()).then(data => 
             {
                 setData(data);
             })
       }
+    
+      useEffect(()=>{
+        fetchUserDetails();
+      },[]) 
+   
+
+      
 
   
         

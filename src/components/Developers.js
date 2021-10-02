@@ -26,7 +26,7 @@ function Developers(props) {
 		if (String(event.target.value) === "") {
 			fetchAllDevelopers();
 		} else {
-			fetch("/api/developers")
+			fetch("https://backend.ranjitm10.repl.co/developers")
 				.then((response) => response.json())
 				.then((data) => {
 					let prev = [];
