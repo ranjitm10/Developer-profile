@@ -7,7 +7,7 @@ function AddDev(props) {
 		return (
 			<div className="avatar-component" key={item.login}>
 				<img className="avatarPicture" src={item.avatar_url} alt="avatar"></img>
-				<Link to={`/developers/${item.login}`} className="avatarLink">
+				<Link to={`https://backend.ranjitm10.repl.co/developers/${item.login}`} className="avatarLink">
 					{item.login}
 				</Link>
 			</div>
